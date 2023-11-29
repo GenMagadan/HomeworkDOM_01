@@ -27,25 +27,47 @@
 
       // 1. Найти по id, используя getElementById, элемент с id равным "super_link" и 
       // вывести этот элемент в консоль.
+      let superLink = document.getElementById('super_link');
+      console.log(superLink);
 
       // 2. Внутри всех элементов на странице, которые имеют класс "card-link",
       // поменяйте текст внутри элемента на "ссылка".
+      let cardLink = document.querySelectorAll('.card-link');
+      // console.dir(cardLink);
+      for (let i = 0; i < cardLink.length; i++) {
+         cardLink[i].textContent = 'ссылка';
+      }
 
       // 3. Найти все элементы на странице с классом "card-link", которые лежат в
       // элементе с классом "card-body" и вывести полученную коллекцию в консоль.
+      let cardLinkBody = document.querySelector('.card-body .card-link');
+      console.log(cardLinkBody);
 
       // 4. Найти первый попавшийся элемент на странице у которого есть атрибут
       // data-number со значением 50 и вывести его в консоль.
 
-      // 5. Выведите содержимое тега title в консоль.
+      let firstEl = document.querySelectorAll('[data-number = "50"]');
+      console.log(firstEl);
+
+      // 5. Выведите содержимое тега card-title в консоль.
+      let text = document.querySelector('.card-title').textContent;
+      console.log(text);
 
       // 6. Получите элемент с классом "card-title" и выведите его родительский
       // узел в консоль.
+      let cardTitle = document.querySelector('.card-title').parentNode;
+      console.log(cardTitle);
 
       // 7. Создайте тег < p >, запишите внутри него текст "Привет" и добавьте
       // созданный тег в начало элемента, который имеет класс "card".
+      let block = document.querySelector('.card');
+      let pNew = document.createElement('p');
+      pNew.textContent = 'Привет';
+      block.prepend(pNew);
 
       // 8. Удалите тег h6 на странице.
+      let rem = document.querySelector('h6');
+      rem.remove();
    </script>
 </body>
 
